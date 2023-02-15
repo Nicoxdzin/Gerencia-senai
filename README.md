@@ -1,2 +1,2 @@
 # Gerencia-senai
-Projeto de gerenciamento de escola de engenharia automotiva Senai
+Projeto de gerenciamento da escola de engenharia automotiva Senai
