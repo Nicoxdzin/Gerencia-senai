@@ -9,11 +9,15 @@
     exit();
   }
 
-  // Exibe informações diferentes na página principal com base no tipo de usuário
-  if ($_SESSION['tipo'] == 'usuario') {
-    echo "Bem-vindo, " . $_SESSION['usuario'] . "! Você é um usuário.";
+   // Redireciona o usuário para a página correta com base no tipo de usuário
+   if ($_SESSION['tipo'] == 'usuario') {
+    // Redireciona para a página de usuário comum
+    header('Location: usuario.php');
+    exit;
   } else {
-    echo "Bem-vindo, " . $_SESSION['usuario'] . "! Você é um administrador.";
+    // Redireciona para a página de administração
+    header('Location: admin.php');
+    exit;
   }
 ?>
 

@@ -1,6 +1,7 @@
 <?php
+    session_start();
     include_once('conexao.php');
-
+    
   // Recupera as informações do formulário de login
   $usuario = $_POST['usuario'];
   $senha = $_POST['senha'];
@@ -17,8 +18,16 @@
     $_SESSION['tipo'] = $row['tipo'];
     header('Location: principal.php');
   } else {
-    // Caso contrário, exibe uma mensagem de erro
-    echo "Nome de usuário ou senha inválidos.";
+    $_SESSION['msg'] =" <script>
+    Swal.fire({
+    position: 'center',
+    icon: 'error',
+    title: 'Login ou senha incorretos',
+    showConfirmButton: false,
+    timer: 1500
+    })
+    </script>";
+    header("Location: login.php");
   }
 
   // Fecha a conexão com o banco de dados
